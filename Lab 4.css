@@ -1,0 +1,49 @@
+
+
+body{
+    background-color: lightblue;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: auto auto auto;
+    align-items: start;
+}
+
+div{
+    background-color: purple;
+    width: 75%;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: white;
+    color: white;
+    text-align: center;
+}
+
+h1{
+    grid-row: 1;
+    grid-column: 1/span 3;
+}
+
+#alert{
+    grid-row: 2;
+    grid-column: 1;
+    padding-bottom: 30px;
+}
+
+#colorChange{
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#textTester{
+    grid-row: 3;
+    grid-column: 1;
+    
+}
+
+#textAdd{
+    grid-row: 3;
+    grid-column: 2;
+}

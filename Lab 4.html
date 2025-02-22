@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Lab 4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INST 377 Lab 4 Jerry Chen</title>
+</head>
+<body>
+    <h1>INST377 - Lab 4 - Jerry Chen</h1>
+    <!-- alert Section -->
+    <div id="alert">
+        <form name="alertSection" onsubmit="alertAction(); return false">
+            <Label for="alertName">Name:</Label>
+            <input type="text" id="alertBox" required>
+            <button>Alert Me!</button>
+        </form>
+    </div>
+    <!-- color change button section -->
+    <div id="colorChange">
+        <form name="colorChangeSection" onsubmit="changeColorAction(); return false">
+            <button>Change Color</button>    
+        </form>
+        
+    </div>
+    <!-- Text validation tester section -->
+    <div id="textTester" onsubmit="testText(); return false">
+        <form name="textTesterSection">
+            <Label for="testerLabel">Text Tester:</Label>
+            <input type="text" id="textBox" required>
+            <button>Validate Text</button>
+        </form>
+    </div>
+    <!-- text heading adder section -->
+    <div id="textAdd">
+        <form name="textAddSection" onsubmit="AddText();return false">
+            <button>Add Text</button>
+        </form>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+        
+        function alertAction(){
+            let text = document.alertSection.alertBox.value.trim
+            if(text !== ""){
+                alert(`Hello ${text}!`)
+            }
+        }
+
+        function changeColorAction(){
+            let currentBody = document.getElementsByTagName("body")[0]
+
+            if(currentBody.style.backgroundColor == "green"){
+                currentBody.style.backgroundColor = "lightblue"
+            }
+
+            else{
+                currentBody.style.backgroundColor = "green"
+            }
+        }
+
+        function testText(){
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+            let text = document.textTesterSection.textBox.value
+
+            if (validation.test(text) == true){
+                alert("Text contains invalid character.")
+            }
+            
+        }
+
+        function AddText(){
+            let header = document.getElementsByTagName("h1")[0]
+                header.innerHTML =  "INST377 - Lab 4 - Jerry Chen - Add Text"
+            
+        }
+        
+    </script>
+</body>
+</html>
